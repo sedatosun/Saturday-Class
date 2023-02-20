@@ -1,0 +1,12 @@
+AccConAndOppOperations.logicAcc();
+AccConAndOppOperations.method('Closed Lost','Web');
+AccConAndOppOperations.method2();
+AccConAndOppOperations.method3('Saturday', 50000, 'other');
+system.debug(AccConAndOppOperations.method4());
+system.debug(AccConAndOppOperations.method5('New'));
+AccConAndOppOperations.method6();
+AccConAndOppOperations.method7('0018d00000QA9vLAAT');
+AccConAndOppOperations.method8();
+AccConAndOppOperations.method9('0018d00000QA9vLAAT', 3);
+AccConAndOppOperations.method10();
+delete[select id from opportunity where amount < 20000 and stagename = 'Closed Lost'];
