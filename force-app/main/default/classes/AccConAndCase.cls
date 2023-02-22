@@ -34,15 +34,17 @@ public class AccConAndCase {
     }
 
     public static void DummyDataCreation3(list<contact> listcontact) {
-        list<case> caseList = new list<case>();
+        list<case> caseList = new list<case>(); 
         for (contact eachCon : listcontact) {
-            case case1 = new case();
-            case1.contactId = eachCon.Id;
-            case1.accountId = eachCon.AccountId;
-            case1.subject = 'test subject';
-            case1.status = 'Escalated';
-            case1.origin = 'Email';
-            caseList.add(case1);
+            for (Integer i = 1; i <= listcontact.size(); i++) {
+                case case1 = new case();
+                case1.contactId = eachCon.Id;
+                case1.accountId = eachCon.AccountId;
+                case1.subject = 'Case Test 2';
+                case1.status = 'Working';
+                case1.origin = 'Email';
+                caseList.add(case1);
+            }
         }
         insert caseList;
     }

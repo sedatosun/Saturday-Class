@@ -15,9 +15,8 @@ AccConAndCase.DummyDataCreation2(3, listAcc);
 
 list<contact> listcontact = new list<contact>();
     contact con1 = new contact();
-    con1.firstname = 'Rose';
-    con1.lastname = 'Sun';
-    con1.AccountId = eachAcc.Id;
+    con1.firstname = 'Charlotte ';
+    con1.lastname = 'Perez';
     listcontact.add(con1);
 
 
