@@ -1,3 +1,4 @@
+/*
 trigger ContactTrigger on Contact (after insert) {
     if (trigger.isAfter && trigger.isInsert) {
         for (contact eachContact : trigger.new) {
@@ -8,4 +9,8 @@ trigger ContactTrigger on Contact (after insert) {
             }
         }
     }
+}
+*/
+trigger ContactTrigger on Contact (after insert){
+    
 }
