@@ -47,8 +47,38 @@ trigger OpportunityTrigger on opportunity (before update, after update) {
         }
 }
 */
+/*
 trigger OpportunityTrigger on opportunity (before update) {
     if (trigger.isBefore && trigger.isUpdate) {
         OpportunityTriggerHandler.oppMethod(trigger.new, trigger.oldMap);
     }
+}
+*/
+trigger OpportunityTrigger on Opportunity (before insert, before update, after insert, after update, after delete, after undelete) {
+    set<id> ac = new set<id>();
+    if (trigger.isAfter) {
+        if (trigger.isInsert || trigger.isUndelete) {
+            /*OpportunityTriggerHandler.future1(trigger.newMap.keySet());*/
+    
+        for (Opportunity eachOpp : trigger.new) {
+        
+        ac.add(eachopp.AccountId);
+    }
+        }
+    }
+    if (trigger.isDelete) {
+        for (opportunity eachOld : trigger.old) {
+            ac.add(eachOld.AccountId);
+        }
+    }
+    if (trigger.isUpdate) {
+        for (opportunity eachUp : trigger.new) {
+            if (eachUp.Amount != trigger.oldMap.get(eachUp.Id).Amount || eachUp.StageName != trigger.oldMap.get(eachUp.Id).StageName) {
+                ac.add(eachUp.AccountId);
+                ac.add(trigger.oldMap.get(eachUp.Id).AccountId);
+            }
+        }
+    }
+    OpportunityTriggerHandler.future1(ac);
+    OpportunityTriggerHandler.future2(ac);
 }

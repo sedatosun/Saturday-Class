@@ -4,7 +4,6 @@ public class ContactTriggerHandler {
 
         list<contact> contactList = [select Id, LastName from Contact where AccountId in :accIdset];
         for (contact eachCon : contactList) {
-            eachCon.
         }
     }
 }

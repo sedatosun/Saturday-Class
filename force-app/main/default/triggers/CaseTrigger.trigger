@@ -38,6 +38,11 @@ trigger CaseTrigger on Case (before update){
     }
 }
 */
+/*
 trigger CaseTrigger on Case (before insert){
     CaseTriggerHandler.caseMethod2(trigger.new);
+}
+*/
+trigger CaseTrigger on Case (after insert){
+    CaseTriggerHandler.caseMethod3(trigger.new);
 }
